@@ -1,0 +1,140 @@
+%Datos del documento
+\documentclass{article}
+
+%Librerías
+\usepackage[spanish, mexico]{babel}
+
+%Datos del documento.
+\title{Cálculo estocástico}
+\author{Eliuth Montiel Navarrete}
+\date{2027-1}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \newpage
+    \section{Clase 0}
+        No vine. xd
+    \section{Clase 1}
+        Repaso de la clase anterior
+        \\
+        Empezamos con un valor \(S_0\) y en un futuro \(t\) contamos con dos posibilidades:
+        \\
+        \\   
+        Si \(H\): \(S_{1}(H) = u S_0\)
+        \\
+        Si \(T\): \(S_{1}(T) = d S_0\)
+        \\
+        \\
+        Contamos con dos probabilidades para cada evento:
+        \\
+        \(P(H) = P\) y \(P(T) = (1-P)\)
+        \\
+        Por ende:
+        \\
+        \(u = \frac{S_1(H)}{S_0} \)
+        \(d = \frac{S_1(T)}{S_0} \)
+        \\
+        De manera intuitiva podemos decir que \(u>1\) y \(d<1\) además se establecen las siguientes reglas:
+        \begin{itemize}
+            \item \(d < u\)
+            \item \(d \neq u\)
+            \item \(d > ut\)
+        \end{itemize}
+        Se introduce r, es la tasa de interés a la que se puede prestar y pedir prestado, la mayoría de las veces se cumple que \(r>=0\).
+        \\
+        \\
+        \textbf{Arbitraje financiero:} Estrategia que no requiere dinero, tiene una probabilida positiva de hacer dinero, probabilidad de cero de perder dinero.
+        \\
+        \\
+        Propiedades del modelo:
+        \begin{enumerate}
+            \item Su relación con la fijación de precios de activos por abritraje y los precios neutrales al riesgo.
+            \item Con suficientes números de periodos se aproxima a un modelo contínuo.
+            \item Desarrollar la teoría de esperanza condicional y martingala.
+        \end{enumerate}
+        \textbf{Ejemplo}: Supongamos una opción call Europea con \(S(0)=4, u=2, d=\frac{1}{2}\) y \(r=\frac{1}{4}\). Suponga \(k=5\) (precio \textit{strike}) y que iniciamos con una riqueza de \(x_0 = 1.20\) y compramos \(\Delta_0=\frac{1}{2}\) de la acción.
+        \\
+        \\
+        En \(t_0: S(0) = 4\).
+        \\
+        En \(t_1: S(H) = 8, S(T) = 2\)
+        \\
+        \((8-5)^{+} = 3\) El máximo entre lo del paréntesis y 0.
+        \\
+        \((2-5)^{+} = 0\)
+        \\
+        \\
+        Como nuestra riqueza es de \(X_0 = 1.2\) necesitamos un préstamo para comprar \(\Delta_0=\frac{1}{2}\) acciones del mercado. Entonces:
+        \\
+        \(X_0-\Delta_0 = 1.2 - (\frac{1}{2}) (4) = -0.8\)
+        \\
+        \\
+        En el plazo de tiempo establecido tenemos un interés y principal que se debe pagar:
+        \\
+        \((1+r) (X_0-\Delta_0S_0) = (1+\frac{1}{4}) (-0.8) = -1\)
+        \\
+        \\
+        Como somos dueños de la \(\Delta_0\) de acción.
+        \\
+        \(X_1(H) = \Delta_0 S_1(H) + (1+r) (X_0 - \Delta_0 S_0)\)
+        \\
+        \(= (\frac{1}{2}) (8) + (1 + \frac{1}{4}) (1.2 - (\frac{1}{2}) (4))\) = 3
+        \\
+        \\
+        Para \(X_1(T)\) sustituimos \(X_1{H}\) en la ecuación anterior por lo que:
+        \\
+        \(X_1(T) = 1-1 = 0\)
+        \\
+        \\
+        Hemos replicado la opción al negociar con la acción y el mercado de dinero (banco). Por lo tanto el valor inicial de 1.20 es el precio que impide el arbitraje en la opción en \(S_0\) (el tiempo 0).
+        \\
+        \\
+        \textbf{¿Que pasa si valiera 1.12 o 1.19? ¿Cómo realiza el arbitraje?}
+        \\
+        \\
+        Los argumentos del ejemplo depende de varios supuestos:
+        \begin{itemize}
+            \item Las acciones de un activo se pueden dividir.
+            \item La tasa de interés es la misma para un préstamo que para una inversión.
+            \item El precio de compra y venta del activo es el mismo (el \textit{spread} es de cero.)
+            \item En cualquier periodo el activo puede tomar dos posibles valores.
+        \end{itemize}
+        Para determinar el precio de \(V_0<\) de un derivado:
+        \\
+        \(X_1 = \Delta_0 S_1 + (1+r) (X_0 - \Delta_0 S_0)\)
+        \\
+        \(=(1+r) X_0 + \Delta_0 (S_1 - (1+r) S_0)\)
+        \\
+        \\
+        Debemos escoger \(X_0\) y \(\Delta_0\) tal que \(X_1(H) = V_1(H)\) y \(X_1(T) = V_1(T)\)
+        \\Recuerde que los valores de \(V_1(H)\) y \(V_1(T)\) están dados, lo que no sabemos es qué valor va a ocurrir. La réplica del derivado requiere:
+        \\
+        \(X_0 + \Delta_0 (\frac{1}{1+r}S_1(H)-S_0) = \frac{1}{1+r}V_1(H)\)
+        \\
+        \(X_0 + \Delta_0 (\frac{1}{1+r}S_1(T)-S_0) = \frac{1}{1+r}V_1(T)\)
+        \\
+        En estas ecuaciones tenemos como incógnitas: \(X_0, \Delta_0, V_1(T), V_1(H)\)
+        \\
+        \\
+        \textbf{Ejemplo al margen}:
+        \\
+        \(P(X) = 0.5\) y \(P(nx) = 0.5\)
+        \\
+        Suponiendo que
+        \begin{itemize}
+            \item [] \(X = 1.5\) MUSD
+            \item [] \(nx = 0.25\) MUSD
+            \item [] \(Io = 0.5\) MUSD
+        \end{itemize}
+        \(E[G] = 0.5 (1.5-0.5) + 0.5(0.25-0.5)\)
+        \\
+        \(=0.5 -0.125 = 0.375\)
+        \\
+        \\
+        \textbf{Cuándo retirarte se puede saber en "La ruina del jugador."}
+        \\
+        \\
+        \\
+        \textbf{Nota: Debería graficar esto para determinar el caso en el que }\(V_1(H) = V_1{T}\)
+\end{document}
