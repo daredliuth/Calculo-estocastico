@@ -15,6 +15,17 @@
     \newpage
     \section{Clase 0}
         No vine. xd
+        \\
+        La clase se dividirá en 2 partes, tiempo discreto y tiempo contínuo.
+        \\
+        Se realizará una segundo parcial
+        \\
+        Evaluación
+        \begin{itemize}
+            \item Primer parcial (Tiempo discreto) - 30%
+            \item Segundo parcial (Tiempo contínuo) - 30%
+            \item Proyecto final - 40%
+        \end{itemize}
     \section{Clase 1}
         Repaso de la clase anterior
         \\
@@ -34,6 +45,10 @@
         \\
         \(u = \frac{S_1(H)}{S_0} \)
         \(d = \frac{S_1(T)}{S_0} \)
+        \\
+        \\
+        \(0<d<1+r<u\)
+        \\
         \\
         De manera intuitiva podemos decir que \(u>1\) y \(d<1\) además se establecen las siguientes reglas:
         \begin{itemize}
@@ -90,7 +105,7 @@
         Hemos replicado la opción al negociar con la acción y el mercado de dinero (banco). Por lo tanto el valor inicial de 1.20 es el precio que impide el arbitraje en la opción en \(S_0\) (el tiempo 0).
         \\
         \\
-        \textbf{¿Que pasa si valiera 1.12 o 1.19? ¿Cómo realiza el arbitraje?}
+        \textbf{¿Que pasa si valiera 1.21 o 1.19? ¿Cómo realiza el arbitraje?}
         \\
         \\
         Los argumentos del ejemplo depende de varios supuestos:
@@ -136,5 +151,85 @@
         \\
         \\
         \\
-        \textbf{Nota: Debería graficar esto para determinar el caso en el que }\(V_1(H) = V_1{T}\)
+        \textbf{Nota: Debería graficar esto para determinar el caso en el que }\(V_1(H) = V_1(T)\)
+
+        \section{Clase 2}
+        Una forma de resolver estas dos ecuaciones:
+        \\
+        \\
+        \(X_0 + \Delta_0 (\frac{1}{1+r}S_1(H)-S_0) = \frac{1}{1+r}V_1(H)\) ...(a)
+        \\
+        \(X_0 + \Delta_0 (\frac{1}{1+r}S_1(T)-S_0) = \frac{1}{1+r}V_1(T)\) ...(b)
+        \\
+        \\
+        Multiplicando la primera ecuación por \(\tilde{p}\) y la segunda por \(\tilde{q}=1-\tilde{p}\). De esta manera obtenemos:
+        \\
+        \\
+        \(X_{0} + \Delta_{0} (\frac{1}{1+r} (\tilde{p} S_{1}(H) + \tilde{q} S_{1}(T) - S_0)) = \frac{1}{1+r} (\tilde{p} V_{1}(H) + \tilde{q} V_{1}(T) - S_0) \) ...(1)
+        \\
+        \\
+        Si tomamos a \(\tilde{p}\) tal que:
+        \\
+        \(S_{0} = \frac{1}{1+r} (\tilde{p} S_{1}(H) + \tilde{q}S_{1}(T)) \) ...(2)
+        \\Entonces, sustituyendo (2) en (1):
+        \\
+        \\
+        \(X_0 = \frac{1}{1+r} (\tilde{p}V_1(H) + \tilde{q}V_1(T)) \) ...(3)
+        \\
+        \\
+        Podemos resolver para \(\tilde{p}\) directamente en 2:
+        \\
+        \\
+        \(\tilde{p} = \frac{S_0(1+r) - S_1(T)}{S_1(H) - S_1(T)} = \frac{S_0(1+r) - dS_0}{uS_0 - dS_0}  = \frac{1+r-d}{u-d}\) ...(4)
+        \\
+        Por lo que:
+        \\
+        \\
+        \(\tilde{q} = 1-\tilde{p} = \frac{u-1-r}{u-d}\) ...(5)
+        \\
+        \\
+        Recordando que la esperanza se define en tiempo discreto como:
+        \\
+        \(E[X] = \sum_{i=1}^{n} p_i * x_i\)
+        \\
+        \\
+        Y para tiempo continuo
+        \\
+        ecuación
+        \\
+        \\
+        Se puede resolver para \(\Delta_0 = \frac{V_1}{}\) restando (a) de (b) para obtener la fórmula \textit{"delta hedge"}.
+        \\
+        \(\Delta_0 = \frac{V_1(H) - V_1(T)}{S_1(H) - S_1(T)}\) ...(6)
+        \\
+        \\
+        Tenemos 4 casos para el valor final a partir del precio strike \(k\):
+        \begin{itemize}
+            \item \(X_1 < k\): Out of the money.
+            \item \(X_1 = k\): At of the money.
+            \item \(X_1 > k\): In of the money.
+            \item \(X_1 >> k\): Deep in the money.
+        \end{itemize}
+        En conclusión:  Si un agente comienza en \( X_0 \) dador por (3) y en el tiempo cero
+        compra \(Delta_0\) acciones dado por (6), en el el tiempo uno. Si la moneda da H
+        tendrá \(V_1(H)\) y se cae, T tendrá \(V_1(T)\). El agente ha cubierto una porción corta
+        en el derivado. El que paga \(V_1\) en el tiempo uno debe valer:
+        \\
+        \\
+        \(V_0 = \frac{1}{1+r} [\tilde{p}V_1(H) + \tilde{q} V_1(T)]\) ...(6)
+        \\
+        \\
+        en el momento cero los número \(\tilde{p}\) y \(\tilde{q}\) son números positivos por la condición de
+        no arbitraje y suman uno. Por esta razón las consideramos probabilidades,
+        pero no son las probabilidades reales, son probabilidades neutrales al riesgo. Las
+        probabilidades \(p\) y \(q\) deben cumplir:
+        \\
+        \\
+        \(S_0 < \frac{1}{1+r} [pS_1(H) + qS_1(T)]\)
+        \\
+        \\
+        Para que un inversionista esté dispuesto a arriesgar su riqueza, mientras que
+        \(\tilde{p}\) y \(\tilde{q}\) es la tasa promedio de crecimiento del activo que es igual a la tasa de
+        crecimiento de la inversión en el mercado, por lo que los inversionistas son neutrales
+        a este riesgo.
 \end{document}

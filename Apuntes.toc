@@ -1,3 +1,4 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Clase 0}{2}{}%
 \contentsline {section}{\numberline {2}Clase 1}{2}{}%
+\contentsline {section}{\numberline {3}Clase 2}{4}{}%
