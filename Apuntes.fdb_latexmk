@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1787845619.78671 "/home/daredliuth/Documentos/Calculo-estocastico/Apuntes.tex" "Apuntes.pdf" "Apuntes" 1787845620.65009 0
+["pdflatex"] 1788450263.8745 "/home/daredliuth/Documentos/Calculo-estocastico/Apuntes.tex" "Apuntes.pdf" "Apuntes" 1788450264.76446 0
   "/etc/texmf/web2c/texmf.cnf" 1743445549.02317 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/daredliuth/Documentos/Calculo-estocastico/Apuntes.tex" 1787845619.28795 9025 181696fdfc62890e8b77e130341a47f1 ""
+  "/home/daredliuth/Documentos/Calculo-estocastico/Apuntes.tex" 1788450263.53734 16374 db153600e145e09cc529ca6c20d3f6b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -20,6 +20,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -41,9 +42,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1743445566.42704 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1743445660 8214172 89740d0e34e07545cfae4611fd814138 ""
-  "Apuntes.aux" 1787845620.56295 417 f1cba7a5f4ab2f733de6a69152c576f2 "pdflatex"
-  "Apuntes.tex" 1787845619.28795 9025 181696fdfc62890e8b77e130341a47f1 ""
-  "Apuntes.toc" 1787845620.56595 192 0e12a9071de37a1d9b2180cd72f78fcd "pdflatex"
+  "Apuntes.aux" 1788450264.66434 512 2bb6163d2194750f1b32c253687f981f "pdflatex"
+  "Apuntes.tex" 1788450263.53734 16374 db153600e145e09cc529ca6c20d3f6b0 ""
+  "Apuntes.toc" 1788450264.66634 246 9c9429a9a9315e3cfe76613c2b07d627 "pdflatex"
   (generated)
   "Apuntes.aux"
   "Apuntes.log"

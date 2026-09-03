@@ -232,4 +232,156 @@
         \(\tilde{p}\) y \(\tilde{q}\) es la tasa promedio de crecimiento del activo que es igual a la tasa de
         crecimiento de la inversión en el mercado, por lo que los inversionistas son neutrales
         a este riesgo.
+
+        \section{Clase 3}
+        2.- Modelo Binomial multiperiodo
+        Se lanza una moneda muchas veces, cuando aparece H
+        se mueve hacia arriba y si aparece T hacia abajo.
+        El único supuesto en la condición de no arbitraje.
+        (Nota: )u y d son constantes en cada evento.
+        (Insertar fig 1.)
+        \\
+        \\
+        \textbf{Ejemplo:}
+        \begin{itemize}
+            \item \(S_0 = 4\)
+            \item \(u=2\)
+            \item \(d=\frac{1}{2}\)
+        \end{itemize}
+        (Insertar fig 2)
+        \\
+        \\
+        Considerar una opción Call Europea.
+        \\
+        Deseamos el precio que no admita arbitraje.
+        \\
+        A la expiración, el pago de la opción call
+        con strike \(k\) y fecha de expiración 2 es
+        \(V_2 = (S_2 - k)^+\), donde \(V_2\) y \(S_2\)
+        dependen del primero y segundo lanzamiento.
+        \\
+        Deseamos saber el precio que no permite el
+        arbitraje en el momento cero. Se compran
+        \(\Delta_0\) acciones del actiVo. invirtiendo
+        \(V_0 - \Delta_0 S_0\)UM para financiarlo
+        (\(V_0 - S_0\) sería negativo por lo que se
+        financia con \(\Delta_0 S_0 V_0\)) UM. En el
+        tiempo uno, el agente tiene un portafolio
+        \\
+        \(X_1 = \Delta_0 S_1 + (1+r) (V_0 - \Delta_0 S_0)\)...(2.1)
+        \\
+        Tenemos dos posibilidades:
+        \\
+        \(X_1 = \Delta_0 S_1(H) + (1+r) (V_0 - \Delta_0 S_0)\)...(2.2)
+        \\
+        \(X_1 = \Delta_0 S_1(T) + (1+r) (V_0 - \Delta_0 S_0)\)...(2.3)
+        \\
+        Después del primer lanzamiento el agente puede reajustar su cobertura
+        \\
+        \(V_2 = \Delta_1 S_2 + (1+r) (X_1 - \Delta_1 S_1)\)...(2.4)
+        \\
+        Tenemos cuatro posibles resultados:
+        \begin{enumerate}
+            \item \(V_2(HH) = \Delta_1(H) S_2(HH) + (1+r) (X_1(H) - \Delta_1(H) S_1(H))\)...(2.5)
+            \item \(V_2(HT) = \Delta_1(H) S_2(HT) + (1+r) (X_1(H) - \Delta_1(H) S_1(H))\)...(2.6)
+            \item \(V_2(TT) = \Delta_1(T) S_2(TT) + (1+r) (X_1(T) - \Delta_1(T) S_1(T))\)...(2.7)
+            \item \(V_2(TH) = \Delta_1(T) S_2(TH) + (1+r) (X_1(T) - \Delta_1(T) S_1(T))\)...(2.8)
+        \end{enumerate}
+
+        Ahora tenemos seis ecuaciones con seis incógnitas: \(V_0\), \(\Delta_0\), \(\Delta(H)\), \(\Delta(T)\), \(X_1(H)\). \(X_1(T)\)
+        Para resolver estas ecuaciones y determinar \(V_0\) comentaremos con la ecuación (2.7) y la ecuación (2.8) para encontrar \(\Delta_1(T)\).
+        \\
+        \\
+        (Nota:) La economía sí funciona con una gallina decapitada.
+        \\
+        \\
+        \(\Delta_1(T) = \frac{V_2(TH) - V_2(TT)}{S_2(TH) - S_2(TT)}\)...(2.9)
+        \\
+        Sustituyendo en (2.7) o (2.8) obtenemos:
+        \\
+        \(X_1(T) = \frac{1}{1+r}[\tilde{p} V_2(TH) + \tilde{q} V_2(TT)]\)...(2.10)
+        \\
+        \(\tilde{p} S_2(TH) + \tilde{q} S_2(TT) = (1+r) S_1(T)\)
+        \\
+        Lo que provoca que todos los términos involucrados \(\Delta_1(T)\) desaparezcan.
+        La ecuación (2.10) define el "precio de la opción en el tiempo uno si el primer resultado es \(T\)" y la denotarems como \(V_1(T)\)
+        \\
+        \(V_1(T) = \frac{1}{1+r} [\tilde{p} V_2(TH) + \tilde{q} V_2(TT)]\)...(2.11)
+        \\
+        Las ecuaciones 2.5 y 2.6 dan algo similar:
+        \\
+        \\
+        \(\Delta_1(H) = \frac{V_2(HH) - V_2(HT)}{S_2(HH) - S_2(HT)}\)...(2.12)
+        \\
+        \(V_1(H) = \frac{1}{1+r} [\tilde{p} V_2(HH) + \tilde{q} V_2(HT)]\)...(2.13)
+        \\
+        \\
+        Este es analogo a la ecuación 1.6. La solución de esta ecuación para \(\Delta_0\) y \(V_0\) es la misma que para (A) y (B) y los resultados nuevamente son (5) y (6).
+        \\
+        Recapitulando tenemos tres procesos estocásticos, (\(\Delta_0, \Delta_1\)), (\(X_0, X_1, X_2\)) y (\(V_0, V_1, V_2\)).
+        \\
+        \\
+        \(X_{n+1} = \Delta_n S_{n+1} + (1+r) (X_n - \Delta_n S_n)\)...(2.14)
+        \\
+        \\
+        Para un derivado que expira en el tiempo dos, la variable aleatoria \(V_2\) para una Opción Call Europea es \(V_2(\omega_1 \omega_2) = (S_2(\omega_1 \omega_2) - k)^+\).
+        Deseamos determinar un valor de \(X_0\) y valores para \(\Delta_0\), \(\Delta_1(H)\) y \(\Delta_1(T)\) tal que \(X_2\) al aplicar recursivamente satisface: 
+        \(X_2(\omega_1 \omega_2) = V_2(\omega_1 \omega_2)\), no importando los valores de \(\omega_1\) y \(\omega_2\).
+        \\
+        \\
+        \textbf{Teorema 1. (Réplica en el modelo binomial en multiperiodo)}
+        \\
+        Considere un modelo binomial de activos-precio de \(N\) periodos, con \(0<d<1+r<u\) y con:
+        \\
+        \(\tilde{p} = \frac{1+r-d}{u-d}, \tilde{q}\frac{u-1-r}{u-d}\)...(2.15)
+        \\
+        Sea \(V_N\) una variable aleatoria dependiente de los primeros \(N\)
+        lanzamientos \(\omega_1,\omega_2, \dots, \omega_n\).
+        Define recursivamente hacia atrás en el tiempo la secuencia de variables aleatorias \(V_{N-1}, V_{N-2}, \dots, V_0\) por
+        \\
+        \\
+        \(V_n(\omega_1 \omega_2 \dots \omega_n) = \frac{1}{1+r} [\tilde{p} V_{n+1} (\omega_1 \omega_2 \dots \omega_n H + \tilde{q} V_{n+1} (\omega_1 \omega_2 \dots T))]\)..(2.16)
+        \\
+        \\
+        tal que cada \(V_n\) depende de los primeros \(n\) lanzamientos \(\omega_1, \omega_2, \dots \omega_n\), donde \(n\) se encuentra entre \(N-1\) y \(0\). Se define:
+        \\
+        \\
+        \(\Delta_n(\omega_1 \dots \omega_n) = \frac{V_{n+1} (\omega_1 \dots \omega_n H) - V_{n+1} (\omega_1 \dots \omega_n T)}{S_{n+1} (\omega_1 \dots \omega_n H) - S_{n+1} (\omega_1 \dots \omega_n T)}\)...(2.17)
+        \\
+        \\
+        donde nuevamente \(n\) se encuentra entre cero y \(N-1\). Si colocamos \(X_0 = V_0\) y se define recursivamente hacia adelante en el tiempo, el portafolio vale \(x_1, x_2, \dots x, x_N\) por (2.14), entonces tendremos:
+        \\
+        \\
+        \(X_N(\omega_1 \omega_2 \dots \omega_N) = V_N(\omega_1 \omega_2 \dots \omega_N)\) para toda \(\omega_1 \omega_2 \dots \omega_N\) ...(2.18)
+        \\
+        \\
+        \textbf{Definición 1:}
+        \\
+        Para \(n=1,2,\dots,N\), la variable aleatoria \(V_n(\omega_1,\dots, \omega_N)\) en el teorema 1, está definida para ser el precio del derivado en el tiempo \(n\) si el resultado de los primeros lanzamientos son \(\omega_1 \dots \omega_n\). El precio del derivado en el momento cero está definido a ser \(V_0\).
+        \\
+        \\
+        \textbf{Ejemplo 3:}
+        \\
+        Como en la figura 3, suponga \(S_0 = 4\), \(u=2\), \(d=\frac{1}{2}\).
+        Asuma \(r = \frac{1}{4}\). Entonces \(\tilde{p} = \tilde{q} = \frac{1}{2}\). Considere una Opción Lookback que paga: \(V_3 = max(S_n-S_3)\) \(0<=n<=3\).
+        \\
+        \\
+        \(V_3(HHH) = S_3(HHH) - S_3(HHH) = 32-32 = 0\)
+        \\
+        \(V_3(HHT) = S_2(HH) - S_3(HHT) = 16-8 = 8\)
+        \\
+        \(V_3(HTH) = S_1(H) - S_3(HTH) = 8-8 = 0\)
+        \\
+        \(V_3(THH) = S_1(H) - S_3(THH) = 8-8 = 0\)
+        \\
+        \(V_3(HTT) = S_1(H) - S_3(HTT) = 8-2 = 6\)
+        \\
+        \(V_3(TTH) = S_0 - S_3(TTH) = 4-2 = 2\)
+        \\
+        \(V_3(THT) = S_0 - S_3(THT) = 4-2 = 2\)
+        \\
+        \(V_3(TTT) = S_0 - S_3(TTH) = 4-0.5 = 3.5\)
+        \\
+        (Nota:) Se obtiene el valor máximo únicamente del camino seguido.
+
 \end{document}
