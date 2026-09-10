@@ -384,4 +384,230 @@
         \\
         (Nota:) Se obtiene el valor máximo únicamente del camino seguido.
 
-\end{document}
+        \section{Clase 4}
+        Continuación del ejercicio de la clase anterior:
+        \\
+        \(V_2(HH) = (\frac{1}{1 + \frac{1}{4}}) (\frac{1}{2} V_3(HHH) + \frac{1}{2} V_3(HHT))
+        = \frac{4}{5} (\frac{1}{2} (0) + \frac{1}{2} (8))
+        = \frac{4}{5} (4) = 3.2\)
+        \\
+        \(V_2(HT) = (\frac{4}{5}) (\frac{1}{2} V_3(HTH) + \frac{1}{2} V_3(HTT))
+        = \frac{4}{5} (\frac{1}{2} (0) + \frac{1}{2} (6))
+        = \frac{4}{5} (3) = 2.4\)
+        \\
+        \(V_2(TH) = (\frac{4}{5}) (\frac{1}{2} V_3(THH) + \frac{1}{2} V_3(THT))
+        = \frac{4}{5} (\frac{1}{2} (0) + \frac{1}{2} (2))
+        = \frac{4}{5} (1) = 0.8\)
+        \\
+        \(V_2(TT) = (\frac{4}{5}) (\frac{1}{2} V_3(TTH) + \frac{1}{2} V_3(TTT))
+        = \frac{4}{5} (\frac{1}{2} (2) + \frac{1}{2} (3.5))
+        = \frac{4}{5} (3) = 2.2\)
+        \\
+        (Nota:) Los medios vienen de las probabilidades de \(\tilde{p}\) y \(\tilde{q}\).
+        \\
+        \\
+        \(V_1(H) = (\frac{4}{5}) (\frac{1}{2} V_2(HH) + \frac{1}{2} V_2(HT))
+        = (\frac{4}{5}) (\frac{1}{2} (3.2) + \frac{1}{2} (2.4))
+        = (\frac{4}{5}) (1.6 + 1.2) = (\frac{4}{5}) (2.8) = 2.24
+        \)
+        \\
+        \(V_1(T) = (\frac{4}{5}) (\frac{1}{2} V_2(TH) + \frac{1}{2} V_2(TT))
+        = (\frac{4}{5}) (\frac{1}{2} (0.8) + \frac{1}{2} (2.2))
+        = (\frac{4}{5}) (0.4 + 1.1) = (\frac{4}{5}) (1.5) = 1.2
+        \)
+        \\
+        \\
+        \(V_0 = (\frac{4}{5}) (\frac{1}{2} V_1(H) + \frac{1}{2} V_1(T))
+        = (\frac{4}{5}) (\frac{1}{2} (2.24) + \frac{1}{2} (1.2))
+        = (\frac{4}{5}) (1.12 + 0.6) = (\frac{4}{5}) (1.72) = 1.376
+        \)
+        \\
+        \\
+        Si un agente vende la opción Lookback en el momento cero
+        por 1.376, puede cubrir su posición corta en la opción
+        de compra.
+        \\
+        \\
+        \(\Delta_0 = \frac{V_1(H) - V_1(T)}{S_1(H) - S_1(T)} = \frac{2.24 - 1.2}{8 -2} = \frac{1.04}{6} = 0.1733\)
+        \\
+        \\
+        Se paga \(0.1733 * 4 = 0.6932\) por cada acción.
+        Para cubrirnos debemos comprar \(\Delta_0 * 4 = 0.1733 * 4 = 0.6932\) acciones e invertir \(1.376 - 0.6932 = 0.6828\).
+        \subsection{Tema 2}
+        Teoría de la probabilidad en el espacio del lanzamiento de una moneda.
+        \\
+        2.1 Espacio de probabilidad finita.
+        \\
+        Un espacio de probabilidad finita es usado para modelar
+        una situación en la cual un experimento aleatorio con muchas
+        psoibilidades es conocido.
+        Por ejemplo: lanzar una moneda tres veces.
+        \\
+        \\
+        \(\Omega = \lbrace HHH, HHT, HTH, THH, HTT, TTH, THT, TTT \rbrace\)
+        \\
+        \\
+        Suponga que la probabilida de cara es \(p\) y cruz es \(q=1-p\).
+        Asumamos que los lanzamientos son independientes igual
+        que la probabilidad de los elementos \(\omega\) (secuencias de tres lanzamientos \(\omega = \omega_1 \omega_2 \omega_3\))  en \(\omega\) son:
+        \\
+        \\
+        \(
+        P(HHH) = p^3 \\
+        P(HHT) = p^2 q \\
+        P(HTH) = p^2 q \\
+        P(THH) = p^2 q \\
+        P(HTT) = p q^2 \\
+        P(TTH) = p q^2 \\
+        P(THT) = p q^2 \\
+        P(HTT) = q^3
+        \)
+        \\
+        \\
+        Los subconjuntos $\Omega$ son llamados eventos, se pueden describir con palabras o con símbolos.
+        Por ejemplo, el evento:
+        \\
+        \\
+        ''El primer lanzamiento es cara'' $ = \lbrace \omega \in \Omega: \omega_1 = H \rbrace = \lbrace HHH, HHT, HTH, HTT \rbrace$ ...2.1.3
+        \\
+        \\
+        Se determina la probabilidad del evento al sumar las probabilidades de los elementos en el evento:
+        \\
+        P(Primer lanzamiento es cara) = $p^3 + p^2q + p^2q + q^2p = P(HHH) + P(HHT) + P(HTH) + P(HTT)
+        = p(p^2 + 2pq + q^2) = p(p+q)^2 = p(1)^2 = p
+        $
+        \\
+        \\
+        Generalizemos la situación un poco al permitira que $\Omega$
+        sea cualquier conjunto finito, algunos elementos en $\Omega$
+        tengan probabilidad cero.
+        \\
+        \\
+        Definición 2.1.1: Un espacio de probabilidad finita, coniste de
+        un espacio muestral $\Omega$ y una medida de probabilidad P.
+        El espacio muestra $\Omega$ es un conjunto finito no vacío y 
+        la medida de probabilidad P es una función que asigna a cada
+        elemento $\omega$ de $\Omega$ un numero en [0,1] tal que
+        \\
+        \\
+        $\sum_{\omega \in \Omega} P(\omega) = 1$ ...2.1.4
+        \\
+        \\
+        Un evento es un subconjunto de $\Omega$ y definimos la probabilidad de un evento $A$
+        \\
+        \\
+        $P(A) = \sum_{\omega \in A} P(\omega)$ ...2.1.5
+        \\
+        \\
+        El conjunto $\omega$ es el conjunto de todos los posibles resultados de un experimento,
+        $P(\omega)$ es la probabilidad de que ocurra un resultado particular $\omega$.
+        \\
+        $P(A)$ es la probabilidad de que el resultado que ocrurre esté en el conjunto A.
+        Si $P(A) = 0$, entonces el resultado es seguro que no se encuentra en A, si $P(A) = 1$,
+        el resultado es seguro que se encuentra en A. Entonces
+        \\
+        \\
+        $P(\Omega) = 1$ ...(2.1.6)
+        \\
+        \\
+        Es claro de (2.1.5) que si A y B son subconjuntos distintos de $\Omega$
+        \\
+        \\
+        $P(A \subset B) = P(A) + P(B)$ ...(2.1.7)
+        \\
+        \subsection{2.2 Variables aleatorias, distribución y esperanza}
+        Un experimento aleatorio generalmente genera datos numéricos.
+        Lo que eleva al conceto de variables aleatorias.
+        \\
+        Definición 2.2.1: Sea $(\Omega,P)$ un espacio de probabilidad finita.
+        Una variable aleatoria (v.a.) es una función real valuada definida en $\Omega$.
+        \\
+        \\
+        \textbf{Ejemplo:} Recordemos el espacio $\Omega$ de tras lanzamientosindependientes y definimos el precio de un acivo para las fórmulas.
+        \\
+        \\
+        Insertar Figura 4.
+        \\
+        Observe que $S_0$ no es aleatorio ya que toma el valor de 4, 
+        no importando el resultado de la moneda, a esta v.a. se le
+        llama en algunas ocasiones v.a. degenerada.
+        \\
+        Se acostumbra escribir el aegumento de v.a. como $\omega$ aún cuando es
+        una secuencia $\omega = \omega_1 \omega_2 \omega_3$, por 
+        ejemplo $S_3(\omega_1 \omega_2 \omega_3)$ o $S_3(\omega)$
+        \\
+        \\
+        La distribución de una v.a. es una especificación de las probabilidades
+        que los varios valores de la v.a. toma.
+        Una v.a. no es una distribución y una distribución no es una v.a.
+        \\
+        \\
+        Esto es importante porque el cambio de medida cambia la
+        distribución de las v.a. pero no las v.a. mismas.
+        \\
+        \\
+        \textbf{Ejemplo: }Lanzar una monedatres veces
+        \\
+        $\Omega = \lbrace HHH, HHT, HTH, THH, HTT, TTH, THT, TTT \rbrace$
+        \\
+        Define la variable aleatoria:
+        \begin{itemize}
+            \item X = Total de caras
+            \item Y = Total de cruces
+            \item $X(HHH) = 3$
+            \item $X(HHT) = X(HTH) = X(THH) = 2$
+            \item $X(HtT) = X(THt) = X(TTH) = 1$
+            \item $X(TTT) = 0$
+            \item $Y(TTT) = 3$
+            \item $Y(TTH) = Y(THT) = Y(HTT) = 2$
+            \item $Y(THH) = Y(HTH) = Y(HHT) = 2$
+            \item $Y(HHH) = 0$
+        \end{itemize}
+        Suponga que la medida de probabilidad $\tilde{p}$
+        donde cara es $\frac{1}{2}$ y la probabilidad de cada elemento de 
+        $\Omega$ es $\frac{1}{8}$, entonces:
+        \begin{itemize}
+            \item $\tilde{P} \lbrace \omega \in \Omega : X(\omega)=0 \rbrace = \tilde{P}(TTT) = \frac{1}{8}$
+            \item $\tilde{P} \lbrace \omega \in \Omega : X(\omega)=1 \rbrace = \tilde{P}(HTT) = \tilde{P}(THT) = \tilde{P}(TTH) = \frac{3}{8}$
+            \item $\tilde{P} \lbrace \omega \in \Omega : X(\omega)=2 \rbrace = \tilde{P}(HHT) = \tilde{P}(HTH) = \tilde{P}(THH) = \frac{3}{8}$
+            \item $\tilde{P} \lbrace \omega \in \Omega : X(\omega)=3 \rbrace = \tilde{P}(HHH) = \frac{1}{8}$
+        \end{itemize}
+        Podemos simplificar la notación:
+        \\
+        $\tilde{P} \lbrace \omega \in \Omega : X(\Omega) = j \rbrace$ por $\tilde{P} \lbrace x=j \rbrace$ entonces:
+        \\
+        \\
+        $\tilde{P} \lbrace X=0 \rbrace = \frac{1}{8}$, $\tilde{P} \lbrace X=1 \rbrace = \frac{3}{8}$
+        \\
+        $\tilde{P} \lbrace X=2 \rbrace = \frac{3}{8}$, $\tilde{P} \lbrace X=3 \rbrace = \frac{1}{8}$
+        \\
+        \\
+        Esta tabla de probabilidades donde X toma sus valores registra la distribución de X bajo $\tilde{P}$.
+        Las v.a.  Y es diferente de X.
+        \\
+        \\
+        $\tilde{P} \lbrace Y=0 \rbrace = \frac{1}{8}$, $\tilde{P} \lbrace Y=1 \rbrace = \frac{3}{8}$
+        \\
+        $\tilde{P} \lbrace Y=2 \rbrace = \frac{3}{8}$, $\tilde{P} \lbrace Y=3 \rbrace = \frac{1}{8}$
+        \\
+        \\
+        Sin embargo su distribución de probabilidad es la misma.
+        El punto aquí es que la v.a. es una función definida en $\Omega$, mientras que su distribuciónes una tabulación de probabildiad que la v.a. puede tomar.
+        \\
+        \\
+        Suponga que se toma una medida de probabilidad P para $\Omega$ que corresponde a $\frac{2}{3}$ de probabilidad
+        de cara y $\frac{1}{3}$ de probabilidad de qye caiga cruz. Entonces:
+        \\
+        \\
+        $\tilde{P} \lbrace X=0 \rbrace = \frac{1}{27}$, $\tilde{P} \lbrace X=1 \rbrace = \frac{6}{27}$
+        \\
+        $\tilde{P} \lbrace X=2 \rbrace = \frac{12}{27}$, $\tilde{P} \lbrace X=3 \rbrace = \frac{8}{27}$
+        \\
+        \\
+        La v.a. X tiene una distribución diferente bajo P que bajo $\tilde{P}$. Es la misma v.a. ¿Qué pasa con Y?
+        \\
+        \\
+        $\tilde{P} \lbrace Y=0 \rbrace = \frac{8}{27}$, $\tilde{P} \lbrace Y=1 \rbrace = \frac{12}{27}$
+        \\
+        $\tilde{P} \lbrace Y=2 \rbrace = \frac{6}{27}$, $\tilde{P} \lbrace Y=3 \rbrace = \frac{1}{27}$
+        \end{document}
