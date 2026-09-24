@@ -513,7 +513,7 @@
         Es claro de (2.1.5) que si A y B son subconjuntos distintos de $\Omega$
         \\
         \\
-        $P(A \subset B) = P(A) + P(B)$ ...(2.1.7)
+        $P(A \cup B) = P(A) + P(B)$ ...(2.1.7)
         \\
         \subsection{2.2 Variables aleatorias, distribución y esperanza}
         Un experimento aleatorio generalmente genera datos numéricos.
@@ -610,4 +610,126 @@
         $\tilde{P} \lbrace Y=0 \rbrace = \frac{8}{27}$, $\tilde{P} \lbrace Y=1 \rbrace = \frac{12}{27}$
         \\
         $\tilde{P} \lbrace Y=2 \rbrace = \frac{6}{27}$, $\tilde{P} \lbrace Y=3 \rbrace = \frac{1}{27}$
+        
+        \section{Clase 3}
+        Definición 2.2.4. Sea $x$ uan v.a. definida en un espacio finito de probabilidad $(\Omega, P)$. La esperanza (o el valor esperado) de $x$ está definido por:
+        \\
+        $EX =\sum_{\omega in \Omega} = X(\omega) P(\omega)$
+        \\
+        Para probabilidades neutrales al riesgo
+        \\
+        $\tilde{E}X =\sum_{\omega in \Omega} = X(\omega) \tilde{P}(\omega)$
+        \\
+        La varianza de $x$
+        \\
+        $Var(x) = E[(X - E(X))^2]$
+        \\
+        \\
+        Si $X$ y $Y$ son v.a. y $c_1$ con $c_2$ son constantes, entonces:
+        \\
+        \\
+        $E(c_1X + c_2Y) = c_1EX + c_2EY$
+        \\
+        \\
+        En particular, si $l(x) = ax+b$ es una función lineal de una variable \textit{dummy} $x$ ($a$ y $b$ constantes), entonces
+        $E[l(x)] = l(EX)$. Cuando lidiamos con funciones convexas tenemos la siguiente desigualdad:
+        \\
+        \\
+        Teorema 2.2.5 (Desigualda de Jensen)
+        \\
+        Sea $X$ una v.a. en un espacio de probabilidad finita, y sea $\varphi(C)$ una función convexa de una variable \textit{dummy} x. Entonces:
+        \\
+        \\
+        $E[\varphi(X)] \ge  \varphi E(X)$
+        \\
+        \\
+        Una consecuencia de la desigualdad de Jensen es que:
+        $E[X^2] \ge (EX)^2$
+        \\
+        \\
+        Se puede obtener la consecuencia particularr de la desigualdad de Jensen de formula
+        \\
+        \\
+        $0 \le E[(X - EX)^2] = E[X^2 - 2XEX + (EX)^2] = E[X^2] - (EX)^2$
+        \\
+        \subsection{2.3 Esperanza condicional}
+        En el modelo binomial de precios del capítulo 1, tenemos las probabilidades neutrales al riesgo:
+        \\
+        $\tilde{p} = \frac{1+r-d}{u-d}$ Y $\tilde{q} = \frac{u-1-r}{u-d}$ ...(2.3.1)
+        \\
+        Se puede verificar que estas probabilidades satisfacen la ecuación:
+        \\
+        \\
+        $\frac{\tilde{p}u + \tilde{q}d}{1+r} = 1$ ...(2.3.2)
+        \\
+        \\
+        Consecuentemente, en cada tiempo $n$ y para toda seuencia de lanzamientos $\omega_1 ... \omega_n$, entonces:
+        \\
+        \\
+        $S_n(\omega_1 ..., \omega_n) = \frac{1}{1+r} [\tilde{p} S_{n+1}(\omega_1...,\omega_nH) + \tilde{q} S_{n+1}(\omega_1...,\omega_nT)]$ ...(2.3.3.)
+        \\
+        \\
+        Para simplificar la notación definimos:
+        \\
+        \\
+        $\tilde{E}_n [S_{n+1}](\omega_1...\omega_n) = \tilde{p} S_{n+1}(\omega_1...,\omega_nH) + \tilde{q} S_{n+1}(\omega_1...,\omega_nT)$ ...(2.3.4)
+        \\
+        \\
+        Podemos escribir (2.3.3) como:
+        \\
+        \\
+        $S_n = \tilde{E}_n[S_{n+1}]$ ...(2.3.5)
+        \\
+        \\y llamemos $\tilde{E}_n[S_{n+1}]$ la esperanza condicional de $S_{n+1}$ basado en la información a la fecha $n$.
+        La esperanza condicional puede ser considerada como una estimación del valor $S_{n+1}$ basado en el conocimiento de los primeros $n$ lanzamientos.
+        \\
+        \\
+        Por ejemplo:
+        \\
+        Insertar caballito de batalla
+        \\
+        y usando la probabilidad neutral al riesgo:
+        $\tilde{p} = \tilde{q} = \frac{1}{2}$, tenemos $\tilde{E}_1[S_2(H)] = \frac{1}{2} 16 + \frac{1}{2} 4 = 10$
+         y 
+        $\tilde{E}_1[S_2(T)] = \frac{1}{2} 4 + \frac{1}{2} 1 = 2.5$.
+        \\
+        Cuando escribimos simplemente
+        $\tilde{E}_1[S_2]$ sin especificar si el primer lanzamiento es cara o cruz, tenemos una cantidad cuyo valor, no conocido en el momento cero, será determinado
+        por el experimento aleatorio del lanzamiento de la moneda de acuerdo a la definición 2.2.1, está cantidad es una v.a.
+        \\
+        \\
+        De manera general, cualquier $X$ es una v.a. que depende de los primeros $N$ lanzamientos, podemos estimar $X$ basado en información disponible en fechas recientes $n \le N$.
+        \\
+        \\
+        Definición 2.3.1. Sea $n$ que satisface $1 \le n \le N$ y sean $\omega_1 ... \omega_n$ daados y, por el momento, gijas. 
+        Existen $2^{Nn}$ posibles caminos $\omega_{n+1}...\omega_{N}$ de secuencias fijas $\omega_1...\omega_n$. Denote por
+        $\#H(\omega_n+1 ... \omega_N)$ y por $\#T(\omega_n+1 ... \omega_N)$ el numero de cruces definamos.
+        \\
+        \\
+        $\tilde{E}_n[X] (\omega_1...\omega_n) = \sum_{\omega_{n+1} .. \omega_{N}} \tilde{p}^{\#H(\omega_{n+1} ... \omega_N)} \tilde{q}^{\#T(\omega_{n+1} ... \omega_N)} X(\omega_1...\omega_n \omega_n+1...\omega_N)$ ...(2.3.6)
+        \\
+        \\
+        y llamemos $\tilde{E}_n[X]$ la esperanza condicional de $X$ basado en la información en la fecha $n$.
+        \\
+        Basado en lo que coonocemos en el momento cero, la esperanza condicional $\tilde{E}_n[X]$ es aleatorio en el sentido que su valor depende de los primeros $n$ lanzamientos, que no conocemos hasta la fecha $n$.
+        Por ejemplo, en la figura 2.3.1 y usando $\tilde{p} = \tilde{q} = \frac{1}{2}$, obtenemos $\tilde{E}_1[S_3](H) = 12.5$ y $\tilde{E}_1[S_3](T) = 3.125$
+        \\
+        $E_1[S_3](H) = \tilde{p} E_2[X](H) + \tilde{1} E_2[X](T)$
+        \\
+        por lo tanto $\tilde{E}_1[S_3]$ es una v.a.
+        \\
+        Definición 2.3.1 continuando los dos casos extremos el condicionamiento son $\tilde{E}_0[X]$, la esperanza condicional de $X$ basado en no información, que definimos por:
+        \\
+        \\
+        $\tilde{E}_0[X] = EX$ ...(2.3.7)
+        \\
+        \\
+        y $E_N[X]$, la esperanza condicional de $X$ basada en el conocimiento de todos los $N$ lanzamientos la cual definimos:
+        \\
+        \\
+        $\tilde{E}_N[X]$ ...(2.3.8)
+        \\
+        \\
+        La esperanza concidional anterior ha sido calculada usando las probabilidaddes neutrales al riesgo $\tilde{p}$ y $\tilde{q}$.
+        Por supuesto la esperanza condicional puede ser también calculada usando las probabilidades reales $p$ y $q$, y esto será denotado por $E_N$
         \end{document}
