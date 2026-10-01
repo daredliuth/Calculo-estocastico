@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.31)  24 SEP 2026 09:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.31)  1 OCT 2026 09:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -655,7 +655,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 656--735
 
  []
 
-[12] [13] [14] (./Apuntes.aux
+[12] [13]
+Overfull \hbox (11.92265pt too wide) in paragraph at lines 754--834
+[]\OT1/cmr/bx/n/10 Ejemplo\OT1/cmr/m/n/10 : Li-nea-li-dad de pas es-pe-ran-za con $\OML/cmm/m/it/10 p \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 yq \OT1/cmr/m/n/10 = []$, cal-cu-la-mos $\OML/cmm/m/it/10 E[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--834
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 835--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--849
+
+ []
+
+[15] [16] (./Apuntes.aux
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
 )
@@ -673,10 +748,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  42i,6n,52p,391b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Apuntes.pdf (14 pages, 205303 bytes).
+Output written on Apuntes.pdf (16 pages, 215488 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

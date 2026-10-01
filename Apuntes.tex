@@ -727,9 +727,129 @@
         y $E_N[X]$, la esperanza condicional de $X$ basada en el conocimiento de todos los $N$ lanzamientos la cual definimos:
         \\
         \\
-        $\tilde{E}_N[X]$ ...(2.3.8)
+        $\tilde{E}_N[X] = X$ ...(2.3.8)
         \\
         \\
         La esperanza concidional anterior ha sido calculada usando las probabilidaddes neutrales al riesgo $\tilde{p}$ y $\tilde{q}$.
         Por supuesto la esperanza condicional puede ser también calculada usando las probabilidades reales $p$ y $q$, y esto será denotado por $E_N$
-        \end{document}
+
+        \section{Clase 4}
+        Teorema (2.3.2) Propiedades fundamentales de la probabilaidad concidional.
+        Sea $N$ un entero positivo, y sea $X$ y $Y$ v.a. dependientes de los primeros $N$ lanzamientos.
+        Las siguientes propiedades se mantienen:
+        \begin{enumerate}
+            \item Linealidad de la esperanza condicional. Para toda constante $c_1$ y $c_2$, tenemos:
+            $E_n[c_1 x + c_2 y] = c_1 E_n[X] + c_2 E_n[y]$
+            \item Extrayendo la que es conocido. Si $X$ nuevamente sólo depende de los primeros $n$ lanzamientos, entonces:
+            $E_n[xy] = X E_n[y]$
+            \item Concicionalmente iterado. Si $0 \le n \le m \le N$, entonces:
+            $E_n [E_m [X]] = E_n[X]$.
+            En particular, $E[E_m[x]] = EX$.
+            \item Independecia . SI $X$ depende solo de $n+1$ lanzamientos hasta $N$, entonces:
+            $E_n[x] = EX$
+            \item Desigualdad de Jensen condicional. Si $\varphi(x)$ es una función convexa de la variable dummy $x$, entonces:
+            $E_n{\varphi(x)} \ge \varphi E_n[x]$
+        \end{enumerate}
+
+        \textbf{Ejemplo}: Linealidad de pas esperanza con $p = \frac{2}{3} y q= \frac{1}{3}$, calculamos $E_1[S_2](H)$.
+        \\
+        \\
+        $E_1[S_2](H) = \frac{2}{3} (16) + \frac{1}{3} (4) = \frac{36}{3} = 12$
+        \\
+        $E_1[S_3](H) = \frac{108}{9} + \frac{162}{9} = \frac{270}{9} = 30$
+        \\Cálculos en el código Clase4.ipynb.
+        \\
+        \\
+        Un cálculo similar muestra que :
+        \\
+        $E_1[s_2 + s_3] = 3 + 4.5 = 7.5$
+        \\
+        \\En conclusión, a pesar del resultado del primer lanzamiento,
+        \\
+        $E_1[S_2 + S_3] = E_1[S_2] + E_1[S3]$
+        \\
+        \\
+        \textbf{Ejemplo}: Extrayendo lo que es conocido.
+        \\
+        Recordemos del ejemplo que:
+        \\
+        $E_1[S_2](H) = 12$
+        \\
+        Si deseamos estimar el producto $S_1 S_2$ basado en la información en el momento uno, se puede factorizar $S_1$, como se aprecia en el siguiente cálculo.
+        \\
+        \\
+        $E_1[S_1 S_2](H) = S_1(H) E_1[S_2](H) = 8(12) = 96$
+        \\
+        De otra manera:
+        \\
+        $E_1[S_1 S_2](H) = E_1[S_1](H) E_1[S_2](H) = \frac{2}{3} (8*16) \frac{1}{3} (8*4) = 96$
+        \\
+        \\
+        $E_1[S_1 S_2](T) = S_1(T) E[S_2](T) = \frac{2}{3}(8) \frac{1}{3} (2) = 6$
+        \\
+        \\
+        En conclusión, a pesar de que la salida del primer lanzamiento, $E_1[S_2 S_2] = S_1 E[S_2]$.
+        \\
+        \\
+        \textbf{Ejemplo}: Condicional iterada. Primero estimamos $S_3$ basado en la información en el momento 2.
+        \\
+        \\
+        $E_2[S_3](HH) = \frac{2}{3} (3) + \frac{1}{3} (8) = 24$
+        \\
+        $E_2[S_3](HT) = \frac{2}{3} (8) + \frac{1}{3} (2) = 6$
+        \\
+        $E_2[S_3](TH) = \frac{2}{3} (8) + \frac{1}{3} (2) = 6$
+        \\
+        $E_2[S_3](TT) = \frac{2}{3} (2) + \frac{1}{3} (0.5) = 1.5$
+        \\
+        Ahora estimamos, basado en la información en el momento uno:
+        \\
+        $E_1[E_2[S_3]](H) = \frac{2}{3} E_2[S_3](HH) + \frac{1}{3} E_2[S_3](HT) = \frac{2}{3}(24) + \frac{1}{3} (6) = 18$
+        \\
+        $E_1[E_2[S_3]](T) = \frac{2}{3} E_2[S_3](TH) + \frac{1}{3} E_2[S_3](TT) = \frac{2}{3}(6) + \frac{1}{3} (1.5) = 4.5$
+        \\
+        \\
+        La estimación de la estimación es promedio del promedio, no es de sorprender que podamos obtener el mismo resultado por un promedio más sencillo.
+        Esto es, estimar $S_3$ directamente basado en la información del momento uno:
+        \\
+        $E_1[S3](H) = \frac{4}{9} (32) + \frac{2}{9} (8) + \frac{2}{9} (8) \frac{1}{9} (2) = \frac{162}{9} = 18$
+        $E_1[S3](T) = \frac{4}{9} (8) + \frac{2}{9} (2) + \frac{2}{2} (8) \frac{1}{9} (0.5) = \frac{40.5}{9} = 4.5$
+        \\
+        En conclusión, no importa el resultado del primer lanzamiento, tenemos:
+        \\
+        $E_1[E_2[S_3]] = E[S_3]$
+        \\
+        \\
+        \textbf{Ejemplo}: Independencia
+        \\
+        El cociente $S_2 / S_1$ toma los valores de 2 o $\frac{1}{2}$ dependiendo del segundo lanzamiento. En particular, $S_2 / S_1$ no depende del primero lanzamiento.
+        \\
+        $E_1[\frac{S_2}{S_1}](H) = \frac{2}{3} \frac{S_2(HH)}{S_1(H)} + \frac{1}{3} \frac{S_2(HT)}{S_1(H)} = 1.5$
+        \\
+        $E_1[\frac{S_2}{S_1}](T) = \frac{2}{3} \frac{S_2(TH)}{S_1(T)} + \frac{1}{3} \frac{S_2(TT)}{S_1(T)} = 1.5$
+        \\
+        Observemos que $E_1[S_2 / S_1]$ no depende del primer lanzamiento (no es v.a.) y de hecho es igual a:
+        \\
+        $E \frac{S_2}{S_1} = 1.5$
+        \subsection{2.4 Martingalas}
+        En el modelo binomial de precios del capítulo uno, tomamos las probabilidades neutrales al riesgo $\tilde{p}$ y $\tilde{q}$ tal que en cada periodo $n$ y para toda
+        secuencia de lanzamientos $\omega_1 ... \omega_n$ tenemos (2.3.3). En término de la notación de esperanza condicional, este hecho puede ser escrito como (2.3.2) y si dividimos ambos
+        lados por (2.3.5) $(1+r)^n$, tenemos:
+        \\
+        \\
+        $\frac{S_n}{(1+r)^n} = \tilde{E}_n[\frac{S_{n+1}}{(1 + r)^{n + 1}}]$ ...(2.4.1)
+        \\
+        \\
+        La ecuación (2.4.1) expresa el hecho de que bajo la medida neutral al riesgo, para un actibo que no paga dividendos, el mejor estimador basado en la información en el momento $n$
+        del valor del preciodel activo edescontado en el momento $n+1$ es el precio del activo descontado en el momento $n$, Procesos que sasitsfacen esta condición se llaman martingalas.
+        \\
+        \textbf{Definicioón (2.4.1)}: Considere el modelo de precios de activos binomial, con cada $M_n$ dependiente solo de los primeros $n$ lanzamientos (y $M_0$ constante).
+        Tal secuencia de v.a. es llamada \underline{proceso estocástico adaptado}.
+        \\
+        \begin{enumerate}
+            \item Si: $M_n = E_n[M_{n+1}], n=0, 1, ... N-1$. Decimos que este proceso es una martingala.
+            \item Si: $M_n \le E_n[M_{n+1}], n=0, 1, ... N-1$ Decunis que este proceso es una submartingala (aún cuando tiene una tendencia a crecer).
+            \item Si: $M_n \ge E_n[M_{n+1}], n=0, 1, ... N-1$ Decunis que este proceso es una supermartingala (aún cuando tiene una tendencia a decrecer).
+        \end{enumerate}
+        (Nota:) El alfa de Jensen $\alpha = R_i - E[R_i]$ es una diferencia entre el rendimiento el día de hoy y el rendimiento esperado el día de hoy.
+\end{document}

@@ -8,3 +8,5 @@
 \contentsline {subsection}{\numberline {5.2}2.2 Variables aleatorias, distribución y esperanza}{10}{}%
 \contentsline {section}{\numberline {6}Clase 3}{12}{}%
 \contentsline {subsection}{\numberline {6.1}2.3 Esperanza condicional}{12}{}%
+\contentsline {section}{\numberline {7}Clase 4}{14}{}%
+\contentsline {subsection}{\numberline {7.1}2.4 Martingalas}{15}{}%
