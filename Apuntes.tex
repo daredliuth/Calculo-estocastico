@@ -843,13 +843,202 @@
         La ecuación (2.4.1) expresa el hecho de que bajo la medida neutral al riesgo, para un actibo que no paga dividendos, el mejor estimador basado en la información en el momento $n$
         del valor del preciodel activo edescontado en el momento $n+1$ es el precio del activo descontado en el momento $n$, Procesos que sasitsfacen esta condición se llaman martingalas.
         \\
+        \\
         \textbf{Definicioón (2.4.1)}: Considere el modelo de precios de activos binomial, con cada $M_n$ dependiente solo de los primeros $n$ lanzamientos (y $M_0$ constante).
         Tal secuencia de v.a. es llamada \underline{proceso estocástico adaptado}.
         \\
         \begin{enumerate}
             \item Si: $M_n = E_n[M_{n+1}], n=0, 1, ... N-1$. Decimos que este proceso es una martingala.
-            \item Si: $M_n \le E_n[M_{n+1}], n=0, 1, ... N-1$ Decunis que este proceso es una submartingala (aún cuando tiene una tendencia a crecer).
-            \item Si: $M_n \ge E_n[M_{n+1}], n=0, 1, ... N-1$ Decunis que este proceso es una supermartingala (aún cuando tiene una tendencia a decrecer).
+            \item Si: $M_n \le E_n[M_{n+1}], n=0, 1, ... N-1$ Decimos que este proceso es una submartingala (aún cuando tiene una tendencia a crecer).
+            \item Si: $M_n \ge E_n[M_{n+1}], n=0, 1, ... N-1$ Decimos que este proceso es una supermartingala (aún cuando tiene una tendencia a decrecer).
         \end{enumerate}
         (Nota:) El alfa de Jensen $\alpha = R_i - E[R_i]$ es una diferencia entre el rendimiento el día de hoy y el rendimiento esperado el día de hoy.
+        \section{Clase 5}
+        Observación 2.4.2. La propiedad de martingala (2.4.2) es una condición "un paso hacia adelante". Sin embargo, implica
+        una condición similar para culaquier número de pases. De hecho, si $M_0. M_1, ..., M_N$ es una martingala y $n \le N-2$,
+        entonces la propiedad de martingala (2.4.2) implica:
+        \\
+        $M_{n+1} = E_{n+1}[M_{n+2}]$
+        \\
+        Tomando esperanza condicional en ambos lados basado en la información en el momento $n$
+        y la propiedad condicional iterada (3) del teorema 2.3.2, obtenemos:
+        \\
+        $E_n[M{m+1}] = E_n[E_{n+1}[M_n+2]] = E_n[M_{n+2}]$
+        \\
+        Debido a la propiedad de martingala (2.4.2) el lado izquierdo es $M_n$, y de este modo tendremos la propiedad de "dos pasos haca adelante":
+        \\
+        $M_n = E_n[M_{n+2}]$
+        \\
+        Iterando este argumento, podemos mostrar que no importando $0 \le n \le m$
+        \\
+        \\
+        $M_n = E_n[M_n]$ ...(2.4.3)
+        \\
+        Podemos llamara a esta la versión "multipasos" de la propiedad martingala.
+        \\
+        \\
+        Observación 2.4.3. El valor esperado de una martingala es constante en el tiempo, ejemplo:
+        \\
+        Si $M_0, M_1, ..., M_n$ es una martingala, entonces
+        \\
+        $M_0 = E[M_n], n=0,...,N$
+        \\
+        De hecho, si $M_0, M_1, ..., M_n$ es una martingala, debemos tomar esperanzas en ambos ladpos de 2.4.2 usando el teorema (2.3.2)(3),
+        y obtener:
+        \\
+        $EM_n = E[M_{n+2}]$ para cada $n$, sigue que:
+        \\
+        $EM_0 = Em_1 = EM_2 = ... EM_{n-1} = EM_N$
+        \\
+        Pero $M_0$ no es aleatorio, por lo tanto: $M_0 = EM_0$ y (2.4.4) prevalece.
+        \\
+        \\
+        Para obtener una martingala, la igualdad en (2.4.2) debe mantenerse para toda secuencia posible de lanzamientos.
+        El proceso del precio en la figura sería una martingala si la probabilidad de un movimiento \textit{up} y la probabilidade
+        de un movimiento \textit{down} fuera $\tilde{q} = \frac{2}{3}$ porque, en cada nodo del arbol de la figura el precio del
+        activo mostrado podría entonces ser el promedio de los posibles precios
+        del activo subsecuente promediado con estos pasos. Por ejemplo:
+        \\
+        $S_1(T) = 2 = \frac{1}{3} S_2(TH) + \frac{2}{3} S_2(TT)$
+        \\
+        Una ecuación similar podría mantenerse en todos los nodos en el árbol, y por lo tanto tendríamos una martingala bajo estas probabilidades.
+        \\
+        Una martingala no tiene tendencia a subir o caer dado que el promedio  de su
+        siguiente periodo es siempre su valor en el precio actual.
+        \\
+        Los precios de los activos tienen una tendencia a crececer y, de hecho, debería crecer el promedio más rápido que
+        el mercado de dinero para compensar al inversionista por el riesgo inherente. En la figura una elección más realista
+        para $p$ y $q$ son $p = \frac{2}{3}$ y $q = \frac{1}{3}$.
+        Con estas elecciones tenemos:
+        \\
+        $E_n[S_{n+1}] = \frac{2}{3} S_n$
+        \\
+        En cada nodo del árbol. Este crecimiento está por arriba del 25% de la tasa de interés que hemos usado y deberíaser
+        así. En partivular con $p = \frac{2}{3}$ y $q=\frac{1}{3}$ y $r = \frac{1}{4}$, el precio del activo
+        descontado tiene una tendencia a crecer. Note que cuando $r = \frac{1}{4}$, tenemos $\frac{1}{1+r} = \frac{4}{5}$ por lo tanto
+        el precio del activp descontado en el momento $n$ es $(\frac{4}{5}^n S_n)$. Calculando:
+        \\
+        \\
+        $E_n[(\frac{4}{5})^{n+1} S_{n+1}] = (\frac{4}{5})^{n+1}E_n[ S_{n+1}] = (\frac{4}{5})^{n+1} (\frac{4}{5}) (\frac{3}{2}) S_n \ge (\frac{4}{5})^n S_n$
+        \\
+        \\
+        El precio del activo descuontado es una submartingala bajo la probabilidad real $p=\frac{2}{3}$ y $\frac{1}{3}$. ESte es el caso típico en mercados reales.
+        \\
+        \\
+        La probabilidad neutral al riesgo se toman para que el precio del activo sea una martingala.
+        \\
+        En la figura con $\tilde{p} = \frac{1}{2} = \tilde{q}$ se puede verificar la ecuación de la martingala.
+        \\
+        $\tilde{E}_n[(\frac{4}{5})^{n+1} S_{n+1}] = (\frac{4}{5})^n S_n$ ...(2.4.5)
+        que se mantiene en cada nodo.
+        \\
+        \\
+        Teorema 2.4.4 Considere el modelo general binomial con $0 < d < 1+r < u$.
+        \\
+        Sean las probabilidades neutrales al riesgo dadas por:
+        \\
+        $\tilde{p} = \frac{1 + r-d}{u-d}$, $\tilde{q} = \frac{u - 1 - r}{u-d}$
+        \\
+        Entonces, bajo las probabilidades neutrales al riesgo el precio del activo descontado es una martingala.
+        \\
+        Note que el teorema 2.4.4 no paga dividendos.
+        \\
+        Prueba uno: Sea $n$ y $(\omega_1 ... \omega_n)$ dados. Entonces:
+        \\
+        $\tilde{E}_n[\frac{1}{1+r}] (\omega_1 ... \omega_n) = \frac{1}{(1+r)^n} (\frac{1}{1+r})$
+        Nota: Examen el próximo jueves 15 de octubre.
+        Nota: Acá faltan los apuntes de las fotos.
+        \section{Clase 6 - Cálculo estocástico: Tiempo continuo}
+        \subsection{Teoría general de la probabilidad}
+        1.1 Espacio infinito de probabilidad
+        \\
+        Un espacio infinito de probabilidad es usado cuando un experimento tiene resultados posibles infinitos. Ejemplo:
+        \begin{enumerate}
+            \item Seleccionar un número del intervalo unitario [0,1].
+            \item Lanzar una moneda un número infinito de veces.
+        \end{enumerate}
+        Para (1) el espacio muestral es el intervalo  $[0,1]$. Definir por $\omega$
+        \\
+        Para (2), definimos: $\Omega_\infty =$ el conjunto de secuencias infinitas de $H's$ y $T's$ ...(1.1.1)
+        \\
+        Un elemento de $\Omega_\infty$ será $\omega_1, \omega_2, ..., $ donde $\omega_n$ denota
+        el resultado del n-ésimo lanzamiento.
+        \\
+        Los espacios mencionados no solo son infinitos, sino infinitos no numerables (no es posible listar sus elementos en secuencia).
+        En estos espacios muestrales, la probabilidad de un resultado particular es cero. No se puede determinar la probabilidad de un subconjunto de $A$
+        del espacio muestral, o del llamado evento al sumar la probabilidad de los elementos de $A$. Se debe definir la probabilidad de los eventos directamente.
+        Pero en espacios muestrales infinitos existen muchos eventos infinitos, a pesar de eso, debemos entender bien qué experimentos aleatorios debemos modular.
+        En este caso se proporciona una fórmula para la probabilidad de cierto eventos simples y entonces apelar a las propiedades de medida de probabilidad para
+        determinar la probabilidad de eventos más complejos.
+        \\
+        \\
+        \textbf{Definición 1.1.1}: Sea $\mathcal{F}$ una colección de subconjuntos de $\Omega$.
+        Decimos que $\mathcal{F}$ es una $\sigma-algebra$ (llamada $\sigma-campo$) siempre que:
+        \begin{enumerate}
+            \item El conjunto vacío $\emptyset$ pertenece a $\mathcal{F}$.
+            \item Siempre que un conjunto $A$ pertenezca a $\mathcal{F}$, su complemento $A^c$ también pertenece a $\mathcal{F}$.
+            \item Siempre que una secuencia de conjuntos $A_1, A_2, ...$ pertenezca a $\mathcal{F}$, sus uniones $U_{n=1}^\infty A_n$ también pertenecen a $\mathcal{F}$.
+        \end{enumerate}
+
+        Si $A_1, A_2, ..., A_n $ son un número finito de conjuntos en una $\sigma-algebra$, sus miembros deben estar en la $\sigma-algebra$.
+        \\
+        Finalmente si $A_1, A_2, ...$ es una secuencia de conjuntos en una $\sigma-algebra$, entonces:
+        \\
+        \\
+        $\cap_{n=1}^\infty A_n = (\cup_{n=1}^\infty A_n^c)^c$
+        \\
+        \\
+        Las propiedades de (2) y (3) aplicadas al lado derecho muestran que $\cap_{n=1}^\infty A_n$  está también en la $\sigma-algebra$.
+        Similarmente, la intersección de un número finito de conjuntos en una $\sigma-algebra$ resulta en un conjunto en la $\sigma-algebra$. Por supuesto si $\mathcal{F}$
+        es una $\sigma-algebra$ entonces todo el espacio $\Omega$ debe ser uno de los conjuntos en $\mathcal{F}$ debido a que $\Omega=\emptyset^c$.
+        \\
+        \\
+        \textbf{Definición 1.1.2}: Sea $\Omega$ un conjunto no vacío, y sea $\mathcal{F}$ una $\sigma-algebra$ de subconjuntoss de $\Omega$ Una medida de probabilidad es una
+        función que, para cada conjunto de $A \in \mathcal{F}$, asigna un en $[0,1]$, llamada la probailida de $A$ y se escribe $P(A)$. Requerimos:
+        \begin{enumerate}
+            \item $P(\Omega) = 1$
+            \item (Caditividad numerable) para toda $A_1, A_2, ...$ es una secuencia de conjuntos disjuntos en $\mathcal{F}$, entonces:
+        \end{enumerate}
+        $P(\cup_{n=1}^\infty A_n) = \sum_{n=1}^{\infty} P(A_n)$ ...(1.1.2)
+        \\
+        \\
+        La tripleta ($\Omega, \mathcal{F}, P$) es llamado un espacio de probabilidad.
+        \\
+        Por ejemplo, podemos estar seguros de que $P(\emptyset) = 0$, al tomar:
+        \\
+        $A_1 = A_2 = A_3 = ... = \emptyset$ en (1.1.2) esta ecuación proviene $P(\emptyset) = \sum_{n=1}^{\infty}P(\emptyset)$. El único número en $[0,1]$
+        para $P(\emptyset)$ se puede tomar:
+        \\
+        \\
+        $P(\emptyset) = 0$ ...(1.1.3)
+        \\
+        \\
+        Si $A$ y $B$ son conjuntos disjuntos en $\mathcal{F}$, tenemos:
+        \\
+        \\
+        $P(A \cup B) = P(A) + P(B)$ ...(1.1.4)
+        \\
+        \\
+        No solo la definición 1.1.2 (2) garantiza esto, la condicióin de aditividad finita, esto es, si $A_1, A_2, ..., A_n$ son varios conjuntos desjuntos finitos en $\mathcal{F}$, entonces:
+        \\
+        \\
+        $P(\cup _{n=1} ^ N A_n) = \sum_{n=1}^{N} P(A_n)$ ...(1.1.5)
+        \\
+        \\
+        Para observar esto, aplique (1.1.2) con $A_{N+1} = A_{N+2} = A_{N+3} = ... = \emptyset$.
+        \\
+        En el caso especial $N=2$ y $A_1 = A, A_2 = simbolo$ tenemos(1.1.4) de (1) de las definicione (1.1.2) y (1.1.4) con $B = A^c$, tenemos:
+        \\
+        \\
+        $P(A^c) = 1 - P(A)$ ...(1.1.6)
+        \\
+        \\
+        En resumen, de la definición (1.1.2) concluimos que la medida de probailidad debe satisfacer (1.1.3)-(1.1.6).
+        \\
+        \textbf{Ejemplo 1.1.3:} (Medida uniforme (Lebesgue)) en $[0,1]$. Construimos un modulo matemático para tomar
+        un número aleatorio en el intervalo $[0,1]$ tal que la probabilidad es distribución uniforme sobre el intervalo. Definimos la probabilidad del intervalo
+        cerrado $[a, b]$por la fórmula:
+        \\
+        \\
+        $P[a,b] = b-a$    $0 \le a \le b \le 1$ ...(1.1.7)
 \end{document}

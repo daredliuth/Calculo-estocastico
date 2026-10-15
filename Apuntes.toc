@@ -10,3 +10,6 @@
 \contentsline {subsection}{\numberline {6.1}2.3 Esperanza condicional}{12}{}%
 \contentsline {section}{\numberline {7}Clase 4}{14}{}%
 \contentsline {subsection}{\numberline {7.1}2.4 Martingalas}{15}{}%
+\contentsline {section}{\numberline {8}Clase 5}{16}{}%
+\contentsline {section}{\numberline {9}Clase 6 - Cálculo estocástico: Tiempo continuo}{18}{}%
+\contentsline {subsection}{\numberline {9.1}Teoría general de la probabilidad}{18}{}%
